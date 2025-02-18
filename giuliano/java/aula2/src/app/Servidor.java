@@ -9,6 +9,8 @@ import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.ServerConnector;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 
+import servlet.Index;
+
 public class Servidor {
 	
 	public static void main(String[] args) {
@@ -41,7 +43,7 @@ public class Servidor {
 			// Adicionar Servlets
 			// handler.addServlet(Arquivo.class, "/");
 			// Servlets
-			//handler.addServlet(Exemplo.class, "/");
+			handler.addServlet(Index.class, "/");
 			
 			server.addConnector(c);
 			server.start();
