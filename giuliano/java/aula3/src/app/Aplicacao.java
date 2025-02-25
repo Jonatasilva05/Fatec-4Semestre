@@ -18,11 +18,11 @@ import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.StandardEnvironment;
 
 @SpringBootApplication(scanBasePackages = "app.controller")
-public class Apliacao extends SpringBootServletInitializer {
+public class Aplicacao extends SpringBootServletInitializer {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-        return builder.sources(Apliacao.class);
+        return builder.sources(Aplicacao.class);
     }
 
     public static void main(String[] args) {
@@ -32,7 +32,7 @@ public class Apliacao extends SpringBootServletInitializer {
         ConfigurableEnvironment environment = new StandardEnvironment();
         environment.setActiveProfiles("dev");
 
-        SpringApplication sa = new SpringApplication(Apliacao.class);
+        SpringApplication sa = new SpringApplication(Aplicacao.class);
         sa.setEnvironment(environment);
         //sa.setAdditionalProfiles("remote","live");
         sa.run(args);
