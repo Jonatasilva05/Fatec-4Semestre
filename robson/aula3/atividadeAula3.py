@@ -1,9 +1,9 @@
 # Lista de candidatos
-candidatos = ["Candidato 1", "Candidato 2", "Candidato 3"]
+candidatos = ["Fulano", "Beltrano", "Ciclano"]
 
 # Dicionários para armazenar a quantidade de votos por faixa etária e gênero
-faixa_etaria = {"18-25": [0, 0, 0], "26-35": [0, 0, 0], "36-50": [0, 0, 0], "51+": [0, 0, 0]}
-genero = {"Masculino": [0, 0, 0], "Feminino": [0, 0, 0], "Outro": [0, 0, 0]}
+faixa_etaria = {"1": [0, 0, 0], "2": [0, 0, 0], "3": [0, 0, 0], "4": [0, 0, 0]}
+genero = {"m": [0, 0, 0], "f": [0, 0, 0], "Outro": [0, 0, 0]}
 
 # Número total de votos
 total_votos = 0
@@ -14,18 +14,19 @@ def registrar_voto():
     
     # Solicita o voto, faixa etária e gênero do eleitor
     print("\nVotação para representante de sala")
-    print("Escolha um candidato (1, 2 ou 3):")
-    voto = int(input("Digite o número do candidato (1, 2 ou 3): ")) - 1
+    print("\nEscolha um candidato")
+    print("1 para Fulano, 2 para Beltrano ou 3 para Ciclano")
+    voto = int(input("Digite o número do candidato a ser escolhido")) - 1
     if voto not in [0, 1, 2]:
         print("Opção inválida. Tente novamente.")
         return False
 
-    faixa = input("Digite sua faixa etária (18-25, 26-35, 36-50, 51+): ")
+    faixa = input("Digite sua faixa etária (1 de 16-18) (2 de 19-22) (3 de 23-25) ou (4 26+) ")
     if faixa not in faixa_etaria:
         print("Faixa etária inválida. Tente novamente.")
         return False
 
-    genero_input = input("Digite seu gênero (Masculino, Feminino, Outro): ")
+    genero_input = input("Digite seu gênero (m para maiusculo) (f para feminino) (outro para outros)")
     if genero_input not in genero:
         print("Gênero inválido. Tente novamente.")
         return False
